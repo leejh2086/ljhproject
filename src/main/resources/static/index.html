@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>메인 페이지</title>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div id="header_left">
+                <button id="header_left_button"><img src="/icons/hamburger.svg" alt="메뉴바"/></button>
+                <button id="header_left_logo" onclick="location.href='/';"><img src="icons/LJHProject.png" alt="로고"/></button>
+                <div id="side_menu" style="display:none; z-index:2;">
+                    <ul>
+                        <li><a>자유게시판</a></li>
+                        <li><a>게임 이모저모</a></li>
+                        <li><a>세상 이모저모</a></li>
+                        <li><a>잡다한 지식</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="header_center">
+                <ul>
+                    <li>자유게시판</li>
+                    <li>게임 이모저모</li>
+                    <li>세상 이모저모</li>
+                    <li>잡다한 지식</li>
+                </ul>
+            </div>
+            <div id="header_right">
+                <button class="header_right_button"><img src="icons/Button-membership.png" alt="회원가입버튼"/></button>
+                <button class="header_right_button"><img src="icons/Button-login.png" alt="로그인버튼"/></button>
+            </div>
+
+        </header>
+    </div>
+
+<footer>
+
+</footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>
