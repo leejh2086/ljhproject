@@ -1,6 +1,6 @@
 function set(){
   let editor = document.querySelector(".ql-editor").innerHTML;
-  let bDetail = document.querySelector("#b_Detail");
+  let b_Contents = document.querySelector("#b_Contents");
   let submit = document.querySelector("#submit");
-  bDetail.value = editor;
+  b_Contents.value = editor;
 }

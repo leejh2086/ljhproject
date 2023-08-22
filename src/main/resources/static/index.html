@@ -34,6 +34,68 @@
             </div>
 
         </header>
+
+        <div id ="main_container">
+            <div id="main_top_container">
+                <div class="con_top_contents">
+                    <div class="row">
+                        <div class="top_col">
+                            <a href="">자유게시판</a>
+                            <a href="">WRITE</a>
+                        </div>
+                    </div>
+                    <div>
+                        <ul id="free_board" th:each="boardList, stat : ${viewAll}">
+                            <li class="free_contents" th:text="${boardList.b_Title}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="con_top_contents">
+                    <div class="row">
+                        <div class="top_col">
+                            <a href="">게임 이모저모</a>
+                            <a href="">WRITE</a>
+                        </div>
+                    </div>
+                    <div>
+                        <ul id="game_board" th:each="boardList, stat : ${viewAll}">
+                            <li class="game_contents" th:text="${boardList.b_Title}"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main_bottom_container">
+                <div class="con_bottom_contents">
+                    <div class="row">
+                        <div class="bottom_col">
+                            <a href="">세상 이모저모</a>
+                            <a href="">WRITE</a>
+                        </div>
+                    </div>
+                    <div>
+                        <ul id="world_board" th:each="boardList, stat : ${viewAll}">
+                            <li class="world_contents" th:text="${boardList.b_Title}"></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="con_bottom_contents">
+                    <div class="row">
+                        <div class="bottom_col">
+                            <a href="">잡다한 지식</a>
+                            <a href="">WRITE</a>
+                        </div>
+                    </div>
+                    <div>
+                        <ul id="panCake_board" th:each="boardList, stat : ${viewAll}">
+                            <li class="panCake_contents" th:text="${boardList.b_Title}"></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 
 <footer>
