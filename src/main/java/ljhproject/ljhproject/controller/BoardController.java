@@ -1,9 +1,11 @@
 package ljhproject.ljhproject.controller;
 
 import ljhproject.ljhproject.dto.BoardDto;
+import ljhproject.ljhproject.dto.PageDto;
 import ljhproject.ljhproject.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -23,6 +25,7 @@ import java.util.List;
             List<BoardDto> boardDtoList = boardService.findAllBoard();
             model.addAttribute("boardList", boardDtoList);
 
+
             return "/board.html";
 
         }
@@ -32,4 +35,12 @@ import java.util.List;
 
             return "write.html";
         }
+
+        @PostMapping("/insert")
+        public String BoardDto(BoardDto boardDto) {
+
+            boardService.insertBoard(boardDto);
+            return "/write.html";
+     }
 }
+
