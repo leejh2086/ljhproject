@@ -22,7 +22,7 @@ public class PageController {
     @GetMapping("/boardList")
     public String boardList(BoardDto boardDto, Model model,
                             @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
-                            @RequestParam(value = "cntPerPage", defaultValue = "11") int cntPerPage) {
+                            @RequestParam(value = "cntPerPage", defaultValue = "6") int cntPerPage) {
 
         int total = pageService.countBoard();
 
@@ -34,6 +34,6 @@ public class PageController {
         System.out.println(boardDto);
         System.out.println(pageDto.getStartPage());
         System.out.println(pageDto.getEndPage());
-        return "/board.html";
+        return "board.html";
     }
 }

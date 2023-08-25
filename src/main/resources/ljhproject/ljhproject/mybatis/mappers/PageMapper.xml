@@ -11,7 +11,7 @@
 
     <select id="selectBoard" resultType="ljhproject.ljhproject.dto.BoardDto">
         SELECT * FROM ljh_board_tb
-        LIMIT 11 OFFSET #{abc};
+        LIMIT 6 OFFSET #{abc};
     </select>
 
 </mapper>

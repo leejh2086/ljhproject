@@ -41,3 +41,51 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+#header {
+position: sticky;
+top: 0;
+margin-bottom:48px;
+width:100%;
+height:87px;
+background-color:#2E4361;
+display:flex;
+justify-content:space-between;
+}
+
+#header_left {
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+#header_left > button {
+background-color:#2E4361;
+border:none;
+cursor:pointer;
+}
+
+
+#header_center {
+display:flex;
+align-items:center;
+}
+
+#header_center > ul {
+display:flex;
+gap:16px;
+letter-spacing:-0.5px;
+font-size:14px;
+color:#ffffff;
+}
+
+#header_right {
+display:flex;
+align-items:center;
+}
+
+#header_right > button {
+background-color:#2E4361;
+border:none;
+cursor:pointer;
+}
