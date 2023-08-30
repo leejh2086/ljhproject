@@ -5,13 +5,62 @@
 
 <mapper namespace="ljhproject.ljhproject.mybatis.mappers.PageMapper">
 
-    <select id="countBoard" resultType="int">
-        select count(*) from ljh_board_tb
+    <select id="countBoardFree" resultType="int">
+        select count(*) from ljh_board_tb WHERE b_Category = '1'
     </select>
 
-    <select id="selectBoard" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb
+    <select id="countBoardGame" resultType="int">
+        select count(*) from ljh_board_tb WHERE b_Category = '2'
+    </select>
+
+    <select id="countBoardWorld" resultType="int">
+        select count(*) from ljh_board_tb WHERE b_Category = '3'
+    </select>
+
+    <select id="countBoardPcb" resultType="int">
+        select count(*) from ljh_board_tb WHERE b_Category = '4'
+    </select>
+
+    <select id="selectFree" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '1'
         LIMIT 6 OFFSET #{abc};
     </select>
+
+    <select id="selectFreeAll" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '1'
+        LIMIT 10 OFFSET #{abc};
+    </select>
+
+    <select id="selectGame" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '2'
+        LIMIT 6 OFFSET #{abc};
+    </select>
+
+    <select id="selectGameAll" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '2'
+        LIMIT 10 OFFSET #{abc};
+    </select>
+
+    <select id="selectWorld" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '3'
+        LIMIT 6 OFFSET #{abc};
+    </select>
+
+    <select id="selectWorldAll" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '3'
+        LIMIT 10 OFFSET #{abc};
+    </select>
+
+    <select id="selectPcb" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '4'
+        LIMIT 6 OFFSET #{abc};
+    </select>
+
+    <select id="selectPcbAll" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT * FROM ljh_board_tb WHERE b_Category = '4'
+        LIMIT 10 OFFSET #{abc};
+    </select>
+
+
 
 </mapper>

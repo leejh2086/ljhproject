@@ -38,6 +38,7 @@ import java.util.List;
             model.addAttribute("boardList", boardDtoList);
 
 
+
             return "/board.html";
 
         }

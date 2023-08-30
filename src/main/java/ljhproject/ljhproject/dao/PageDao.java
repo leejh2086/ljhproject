@@ -15,13 +15,45 @@ public class PageDao {
     @Autowired
     public PageDao(PageMapper pageMapper) { this.pageMapper = pageMapper; }
 
-    public List<PageDto> selectBoard(BoardDto boardDto) {
-        return pageMapper.selectBoard(boardDto);
+    public List<PageDto> selectFree(BoardDto boardDto) {
+        return pageMapper.selectFree(boardDto);
+    }
+    public List<PageDto> selectFreeAll(BoardDto boardDto) {
+        return pageMapper.selectFreeAll(boardDto);
+    }
+    public List<PageDto> selectGame(BoardDto boardDto) {
+        return pageMapper.selectGame(boardDto);
+    }
+    public List<PageDto> selectGameAll(BoardDto boardDto) {
+        return pageMapper.selectGameAll(boardDto);
+    }
+    public List<PageDto> selectWorld(BoardDto boardDto) {
+        return pageMapper.selectWorld(boardDto);
+    }
+    public List<PageDto> selectWorldAll(BoardDto boardDto) {
+        return pageMapper.selectWorldAll(boardDto);
+    }
+    public List<PageDto> selectPcb(BoardDto boardDto) {
+        return pageMapper.selectPcb(boardDto);
+    }
+    public List<PageDto> selectPcbAll(BoardDto boardDto) {
+        return pageMapper.selectPcb(boardDto);
     }
 
-    public int countBoard() {
-        return pageMapper.countBoard();
+    public int countBoardFree() {
+        return pageMapper.countBoardFree();
     }
+    public int countBoardGame() {
+        return pageMapper.countBoardGame();
+    }
+    public int countBoardWorld() {
+        return pageMapper.countBoardWorld();
+    }
+    public int countBoardPcb() {
+        return pageMapper.countBoardPcb();
+    }
+
+
 
 
 

@@ -18,10 +18,52 @@ public class PageService {
 
 
     public List<PageDto> selectBoard(BoardDto boardDto) {
-        return pageDao.selectBoard(boardDto);}
+        return pageDao.selectGame(boardDto);
+    }
+    public List<PageDto> selectBoardAll(BoardDto boardDto) {
+        return pageDao.selectGameAll(boardDto);
+    }
 
-    public int countBoard() {
-        return pageDao.countBoard();
+    public List<PageDto> selectFree(BoardDto boardDto){
+
+        return pageDao.selectFree(boardDto);
+    }
+
+    public List<PageDto> selectFreeAll(BoardDto boardDto){
+
+        return pageDao.selectFreeAll(boardDto);
+    }
+
+    public List<PageDto> selectWorld(BoardDto boardDto){
+
+        return pageDao.selectWorld(boardDto);
+    }
+    public List<PageDto> selectWorldAll(BoardDto boardDto){
+
+        return pageDao.selectWorldAll(boardDto);
+    }
+
+    public List<PageDto> selectPcb(BoardDto boardDto){
+
+        return pageDao.selectPcb(boardDto);
+    }
+
+    public List<PageDto> selectPcbAll(BoardDto boardDto){
+
+        return pageDao.selectPcbAll(boardDto);
+    }
+
+    public int countBoardFree() {
+        return pageDao.countBoardFree();
+    }
+    public int countBoardGame() {
+        return pageDao.countBoardFree();
+    }
+    public int countBoardWorld() {
+        return pageDao.countBoardFree();
+    }
+    public int countBoardPcb() {
+        return pageDao.countBoardFree();
     }
 
 
