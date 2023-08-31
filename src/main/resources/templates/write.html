@@ -22,11 +22,11 @@
             </div>
         </div>
         <div id="header_center">
-            <ul>
-                <li>자유게시판</li>
-                <li>게임 이모저모</li>
-                <li>세상 이모저모</li>
-                <li>잡다한 지식</li>
+            <ul id="header_center_ul">
+                <li><a href="free">자유게시판</a></li>
+                <li><a href="game">게임 이모저모</a></li>
+                <li><a href="world">세상 이모저모</a></li>
+                <li><a href="pancake">잡다한 지식</a></li>
             </ul>
         </div>
         <div id="header_right">
@@ -37,7 +37,9 @@
     </header>
     <div id="main_container">
     <form id="write_form" action="/insert" method="post" onsubmit="set()">
-        <h2>자유 게시판</h2>
+        <div id="top_col">
+            <h2>글쓰기 페이지</h2>
+        </div>
 
         <div id="title">
             <input type="text" placeholder="제목을 입력해주세요." name="b_Title" required>
@@ -48,7 +50,7 @@
         <input type="hidden" id="b_Contents" name="b_Contents" required>
         <div id="button_wrap">
             <div id="button_div">
-                <button type="submit" id="submit"><img src="/icons/Button-write.png" alt="글쓰기버튼"/></button>
+                <button type="submit" id="select"><img src="/icons/Button-write.png" alt="글쓰기버튼"/></button>
             </div>
         </div>
 

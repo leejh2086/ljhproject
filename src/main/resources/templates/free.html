@@ -21,11 +21,11 @@
             </div>
         </div>
         <div id="header_center">
-            <ul>
-                <li>자유게시판</li>
-                <li>게임 이모저모</li>
-                <li>세상 이모저모</li>
-                <li>잡다한 지식</li>
+            <ul id="header_center_ul">
+                <li><a href="free">자유게시판</a></li>
+                <li><a href="game">게임 이모저모</a></li>
+                <li><a href="world">세상 이모저모</a></li>
+                <li><a href="pancake">잡다한 지식</a></li>
             </ul>
         </div>
         <div id="header_right">
@@ -37,24 +37,24 @@
 
     <div id="main_container">
             <div id="top_col">
-                <p>자유게시판</p>
+                <h2>자유게시판</h2>
             </div>
     <div id="main_wrap">
         <div id="main_board">
             <ul id="main_contents">
-                <li class="contents_title" style="width:100px;">No.</li>
-                <li class="contents_title" style="width:604px;">제목</li>
-                <li class="contents_title" style="width:195px;">글쓴이</li>
-                <li class="contents_title" style="width:143px;">조회수</li>
-                <li class="contents_title" style="width:146px;">작성일</li>
+                <li class="contents_title" style="width:100px;">번호</li>
+                <li class="contents_title" style="width:600px;">제목</li>
+                <li class="contents_title" style="width:200px;">글쓴이</li>
+                <li class="contents_title" style="width:142px;">조회수</li>
+                <li class="contents_title" style="width:142px;">작성일</li>
             </ul>
             <div id="main_freeList">
                 <ul id="freeList_contents" th:each="freeList, stat : ${viewAllFree}">
                     <li class="contents_detail" style="width:100px;" th:text="${freeList.b_Id}"></li>
-                    <li class="contents_detail" style="width:604px;" th:text="${freeList.b_Title}"></li>
-                    <li class="contents_detail" style="width:195px;"></li>
-                    <li class="contents_detail" style="width:143px;"></li>
-                    <li class="contents_detail" style="width:146px;" th:text="${freeList.b_Regdate}"></li>
+                    <li class="contents_detail" style="width:600px;" th:text="${freeList.b_Title}"></li>
+                    <li class="contents_detail" style="width:200px;"></li>
+                    <li class="contents_detail" style="width:142px;"></li>
+                    <li class="contents_detail" style="width:142px;" th:text="${freeList.b_Regdate}"></li>
                 </ul>
             </div>
         </div>
