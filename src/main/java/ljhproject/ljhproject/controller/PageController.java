@@ -2,11 +2,14 @@ package ljhproject.ljhproject.controller;
 
 import ljhproject.ljhproject.dto.BoardDto;
 import ljhproject.ljhproject.dto.PageDto;
+import ljhproject.ljhproject.service.BoardService;
 import ljhproject.ljhproject.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -47,5 +50,21 @@ public class PageController {
         System.out.println(pageDto.getEndPage());
         return "/free.html";
     }
+
+    @RequestMapping("boardDetail")
+    public String Detail(@RequestParam("b_Id") int b_Id, Model model) {
+        BoardDto boardDto = new BoardDto();
+        boardDto.setB_Id(b_Id);
+        model.addAttribute("boardDetail", pageService.selectDetail(boardDto));
+        return "boardDetail"; // 상세 페이지 뷰 이름
+    }
+
+    /*@RequestMapping("boardUpdate")
+    public String updateDetail(@RequestParam("b_Id") int b_Id, Model model) {
+        BoardDto boardDto = new BoardDto();
+        boardDto.setB_Id(b_Id);
+        model.addAttribute("boardDetail", pageService.updateDetail(boardDto));
+        return "boardDetail"; // 상세 페이지 뷰 이름
+    }*/
 
 }

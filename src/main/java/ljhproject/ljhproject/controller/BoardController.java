@@ -39,7 +39,7 @@ import java.util.List;
 
 
 
-            return "/board.html";
+            return "/update.html";
 
         }
 
@@ -80,5 +80,13 @@ import java.util.List;
 
          return "panCake.html";
      }
+
+     @RequestMapping("/update")
+     public String toUpdate(Model model){
+
+         return "update.html";
+     }
+
+
 }
 

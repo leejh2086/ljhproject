@@ -14,6 +14,7 @@ public class BoardDto {
     private int b_Id;
     private String b_Title;
     private String b_Contents;
+    private String b_Users;
     private LocalDate b_Regdate;
     private int abc;
 }

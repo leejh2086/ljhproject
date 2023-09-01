@@ -53,6 +53,11 @@ public class PageService {
         return pageDao.selectPcbAll(boardDto);
     }
 
+    public BoardDto selectDetail(BoardDto boardDto){
+        return pageDao.selectDetail(boardDto);
+
+    }
+
     public int countBoardFree() {
         return pageDao.countBoardFree();
     }

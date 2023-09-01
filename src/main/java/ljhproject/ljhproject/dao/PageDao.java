@@ -39,6 +39,9 @@ public class PageDao {
     public List<PageDto> selectPcbAll(BoardDto boardDto) {
         return pageMapper.selectPcb(boardDto);
     }
+    public BoardDto selectDetail(BoardDto boardDto) {
+        return pageMapper.selectDetail(boardDto);
+    }
 
     public int countBoardFree() {
         return pageMapper.countBoardFree();

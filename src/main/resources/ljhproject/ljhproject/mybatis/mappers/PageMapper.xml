@@ -61,6 +61,12 @@
         LIMIT 10 OFFSET #{abc};
     </select>
 
+    <select id="selectDetail" resultType="ljhproject.ljhproject.dto.BoardDto">
+        SELECT b_Id, b_Title, b_Contents, b_Users, b_Regdate
+        FROM ljh_board_tb
+        WHERE b_Id = #{b_Id}
+    </select>
+
 
 
 </mapper>
