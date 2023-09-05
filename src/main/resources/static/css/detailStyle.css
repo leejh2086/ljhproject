@@ -106,6 +106,15 @@ padding-top:1px;
 background-color:#ffffff;
 }
 
+#contents_wrap {
+border:1px solid #000000;
+margin:0px 8px 8px 8px;
+}
+
+#main_contents {
+margin: 0px 8px 0px 8px;
+}
+
 #top_col {
 margin:48px 8px 48px 8px;
 }
@@ -115,7 +124,26 @@ font-size:24px;
 font-weight:bold;
 }
 
+#contents_top {
+display:flex;
+gap:16px;
+margin-bottom:40px;
+flex-direction:column;
+}
 
+#contents_bottom {
+margin-bottom:32px;
+}
+
+#button_bar {
+display:flex;
+justify-content:flex-end;
+}
+
+#button_bar > button {
+background-color:transparent;
+border:none;
+}
 
 footer {
 width:100%;

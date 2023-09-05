@@ -10,5 +10,9 @@ import java.util.List;
         List<BoardDto> findAllBoard();
 
         void insertBoard(BoardDto boardDto);
+
+        void updateBoard(BoardDto boardDto);
+
+        void deleteBoard(BoardDto boardDto);
     }
 

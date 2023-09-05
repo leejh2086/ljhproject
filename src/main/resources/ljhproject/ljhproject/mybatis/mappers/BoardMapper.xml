@@ -18,7 +18,7 @@
 
     <update id="updateBoard">
         UPDATE ljh_board_tb
-        SET b_Title = #{b_Title}
+        SET b_Title = #{b_Title}, b_Contents = #{b_Contents}
         WHERE b_Id = #{b_Id}
     </update>
 

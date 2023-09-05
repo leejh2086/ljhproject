@@ -17,10 +17,10 @@ public class PageService {
     public PageService(PageDao pageDao) {this.pageDao = pageDao;}
 
 
-    public List<PageDto> selectBoard(BoardDto boardDto) {
+    public List<PageDto> selectGame(BoardDto boardDto) {
         return pageDao.selectGame(boardDto);
     }
-    public List<PageDto> selectBoardAll(BoardDto boardDto) {
+    public List<PageDto> selectGameAll(BoardDto boardDto) {
         return pageDao.selectGameAll(boardDto);
     }
 

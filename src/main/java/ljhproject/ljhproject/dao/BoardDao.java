@@ -26,4 +26,14 @@ public class BoardDao {
 
         boardMapper.insertBoard(boardDto);
     }
+
+    public void updateBoard(BoardDto boardDto){
+
+        boardMapper.updateBoard(boardDto);
+    }
+
+    public void deleteBoard(BoardDto boardDto){
+
+        boardMapper.updateBoard(boardDto);
+    }
 }

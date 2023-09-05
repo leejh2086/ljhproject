@@ -37,7 +37,7 @@ public class PageDao {
         return pageMapper.selectPcb(boardDto);
     }
     public List<PageDto> selectPcbAll(BoardDto boardDto) {
-        return pageMapper.selectPcb(boardDto);
+        return pageMapper.selectPcbAll(boardDto);
     }
     public BoardDto selectDetail(BoardDto boardDto) {
         return pageMapper.selectDetail(boardDto);

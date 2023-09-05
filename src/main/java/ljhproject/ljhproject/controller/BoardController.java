@@ -6,7 +6,9 @@ import ljhproject.ljhproject.service.BoardService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -31,18 +33,6 @@ import java.util.List;
             }
         }
 
-        @RequestMapping("/board")
-        public String toBoard(Model model) {
-
-            List<BoardDto> boardDtoList = boardService.findAllBoard();
-            model.addAttribute("boardList", boardDtoList);
-
-
-
-            return "/update.html";
-
-        }
-
 
         @RequestMapping("/write")
         public String toWrite(Model model){
@@ -56,6 +46,20 @@ import java.util.List;
             boardService.insertBoard(boardDto);
             return "/write.html";
         }
+
+     @PutMapping("/update")
+     public String updateBoard(BoardDto boardDto) {
+
+         boardService.updateBoard(boardDto);
+         return "redirect:/write.html";
+     }
+
+     @DeleteMapping("/delete")
+     public String deleteBoard(BoardDto boardDto) {
+
+         boardService.deleteBoard(boardDto);
+         return "redirect:/write.html";
+     }
 
      @RequestMapping("/free")
      public String toFree(Model model){

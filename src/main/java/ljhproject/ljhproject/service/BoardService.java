@@ -25,5 +25,9 @@ public class BoardService {
         boardDao.insertBoard(boardDto);
     }
 
+    public void updateBoard(BoardDto boardDto) { boardDao.updateBoard(boardDto);}
+
+    public void deleteBoard(BoardDto boardDto) { boardDao.deleteBoard(boardDto); }
+
 
 }

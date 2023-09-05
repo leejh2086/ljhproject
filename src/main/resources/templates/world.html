@@ -21,11 +21,11 @@
             </div>
         </div>
         <div id="header_center">
-            <ul>
-                <li>자유게시판</li>
-                <li>게임 이모저모</li>
-                <li>세상 이모저모</li>
-                <li>잡다한 지식</li>
+            <ul id="header_center_ul">
+                <li><a href="free">자유게시판</a></li>
+                <li><a href="game">게임 이모저모</a></li>
+                <li><a href="world">세상 이모저모</a></li>
+                <li><a href="pancake">잡다한 지식</a></li>
             </ul>
         </div>
         <div id="header_right">
@@ -34,6 +34,65 @@
         </div>
 
     </header>
+
+    <div id="main_container">
+        <div id="top_col">
+            <h2>세상 이모저모</h2>
+        </div>
+        <div id="main_wrap">
+            <div id="main_board">
+                <ul id="main_contents">
+                    <li class="contents_title" style="width:100px;">번호</li>
+                    <li class="contents_title" style="width:600px;">제목</li>
+                    <li class="contents_title" style="width:200px;">글쓴이</li>
+                    <li class="contents_title" style="width:142px;">조회수</li>
+                    <li class="contents_title" style="width:142px;">작성일</li>
+                </ul>
+                <div id="main_worldList">
+                    <ul id="worldList_contents" th:each="worldList, stat : ${viewAllWorld}">
+                        <li class="contents_detail" style="width:100px;" th:text="${worldList.b_Id}"></li>
+                        <li class="contents_detail" style="width:600px;">
+                            <a th:href="@{boardDetail(b_Id=${worldList.b_Id})}"><span th:text="${worldList.b_Title}"></span></a>
+                        </li>
+                        <li class="contents_detail" style="width:200px;" th:text="${worldList.b_Users}"></li>
+                        <li class="contents_detail" style="width:142px;" th:text="${worldList.b_Hit}"></li>
+                        <li class="contents_detail" style="width:142px;" th:text="${worldList.b_Regdate}"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="write_button">
+                <button type="button" onclick="location.href='write';"><img src="/icons/write.png" alt="글쓰기버튼"/></button>
+            </div>
+            <div id="search_bar">
+                <input type="text" name="input"/>
+                <button type="button" onclick="";><img src="/icons/search_arrow.png" alt="검색버튼"></button>
+            </div>
+            <div id="button_bar">
+
+                <ul class="pagination">
+                    <li th:if="${paging.nowPage > 1}">
+                        <a th:href="@{/world(nowPage=1)}" th:text="'<<'"></a>
+                    </li>
+
+                    <li th:if="${paging.nowPage > 1}">
+                        <a th:href="@{/world(nowPage=${paging.nowPage - 1})}" th:text="'<'"></a>
+                    </li>
+
+                    <li th:each="page: ${#numbers.sequence(paging.startPage, paging.endPage)}">
+                        <a th:href="@{/world(nowPage=${page})}" th:text="${page}"></a>
+                    </li>
+
+                    <li th:if="${paging.nowPage < paging.lastPage}">
+                        <a th:href="@{/world(nowPage=${paging.nowPage + 1})}" th:text="'>'"></a>
+                    </li>
+
+                    <li th:if="${paging.nowPage < paging.lastPage}">
+                        <a th:href="@{/world(nowPage=${paging.lastPage})}" th:text="'>>'"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer>

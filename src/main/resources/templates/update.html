@@ -36,22 +36,22 @@
 
     </header>
     <div id="main_container">
-        <form id="write_form" action="/insert" method="post" onsubmit="set()">
+        <form id="update_form" action="/update" method="post" th:object="${boardUpdate}">
             <div id="top_col">
                 <h2>글수정 페이지</h2>
             </div>
 
             <div id="title">
-                <input type="text" placeholder="제목을 입력해주세요." name="b_Title" required>
+                <input type="text" placeholder="제목을 입력해주세요." name="b_Title" th:field="*{b_Title}" required>
             </div>
             <div id="editor">
 
             </div>
-            <input type="hidden" id="b_Contents" name="b_Contents" required>
+            <input type="hidden" id="b_Contents" name="b_Contents" th:field="*{b_Contents}" required>
             <div id="button_wrap">
                 <div id="button_div">
-                    <button></button>
-                    <button type="submit" id="select"><img src="/icons/Button-write.png" alt="삭제버튼"/></button>
+                    <button type="button" id="update"><img src="/icons/Button-update.png" alt="수정버튼"/></button>
+                    <button type="button" formaction="/delete"><img src="/icons/Button-delete.png" alt="삭제버튼"/></button>
                 </div>
             </div>
 

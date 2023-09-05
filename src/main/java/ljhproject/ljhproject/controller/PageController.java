@@ -27,7 +27,7 @@ public class PageController {
                             @RequestParam(value = "cntPerPage", defaultValue = "6") int cntPerPage) {
 
         model.addAttribute("viewFree", pageService.selectFree(boardDto));
-        model.addAttribute("viewGame", pageService.selectBoard(boardDto));
+        model.addAttribute("viewGame", pageService.selectGame(boardDto));
         model.addAttribute("viewWorld", pageService.selectWorld(boardDto));
         model.addAttribute("viewPcb", pageService.selectPcb(boardDto));
         return "index";
@@ -48,7 +48,58 @@ public class PageController {
         System.out.println(boardDto);
         System.out.println(pageDto.getStartPage());
         System.out.println(pageDto.getEndPage());
-        return "/free.html";
+        return "free";
+    }
+    @GetMapping("/game")
+    public String gameList(BoardDto boardDto, Model model,
+                           @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
+                           @RequestParam(value = "cntPerPage", defaultValue = "10") int cntPerPage) {
+
+        int total = pageService.countBoardGame();
+
+
+        PageDto pageDto = new PageDto(total, nowPage, cntPerPage);
+        boardDto.setAbc((nowPage-1) * cntPerPage);
+        model.addAttribute("paging", pageDto);
+        model.addAttribute("viewAllGame", pageService.selectGameAll(boardDto));
+        System.out.println(boardDto);
+        System.out.println(pageDto.getStartPage());
+        System.out.println(pageDto.getEndPage());
+        return "game";
+    }
+    @GetMapping("/pancake")
+    public String pcbList(BoardDto boardDto, Model model,
+                           @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
+                           @RequestParam(value = "cntPerPage", defaultValue = "10") int cntPerPage) {
+
+        int total = pageService.countBoardPcb();
+
+
+        PageDto pageDto = new PageDto(total, nowPage, cntPerPage);
+        boardDto.setAbc((nowPage-1) * cntPerPage);
+        model.addAttribute("paging", pageDto);
+        model.addAttribute("viewAllPcb", pageService.selectPcbAll(boardDto));
+        System.out.println(boardDto);
+        System.out.println(pageDto.getStartPage());
+        System.out.println(pageDto.getEndPage());
+        return "pancake";
+    }
+    @GetMapping("/world")
+    public String worldList(BoardDto boardDto, Model model,
+                           @RequestParam(value = "nowPage", defaultValue = "1") int nowPage,
+                           @RequestParam(value = "cntPerPage", defaultValue = "10") int cntPerPage) {
+
+        int total = pageService.countBoardWorld();
+
+
+        PageDto pageDto = new PageDto(total, nowPage, cntPerPage);
+        boardDto.setAbc((nowPage-1) * cntPerPage);
+        model.addAttribute("paging", pageDto);
+        model.addAttribute("viewAllWorld", pageService.selectWorldAll(boardDto));
+        System.out.println(boardDto);
+        System.out.println(pageDto.getStartPage());
+        System.out.println(pageDto.getEndPage());
+        return "world";
     }
 
     @RequestMapping("boardDetail")
@@ -59,12 +110,12 @@ public class PageController {
         return "boardDetail"; // 상세 페이지 뷰 이름
     }
 
-    /*@RequestMapping("boardUpdate")
+    @RequestMapping("boardUpdate")
     public String updateDetail(@RequestParam("b_Id") int b_Id, Model model) {
         BoardDto boardDto = new BoardDto();
         boardDto.setB_Id(b_Id);
-        model.addAttribute("boardDetail", pageService.updateDetail(boardDto));
-        return "boardDetail"; // 상세 페이지 뷰 이름
-    }*/
+        model.addAttribute("boardUpdate", pageService.selectDetail(boardDto));
+        return "update"; // 상세 페이지 뷰 이름
+    }
 
 }

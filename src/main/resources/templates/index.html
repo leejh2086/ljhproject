@@ -45,8 +45,10 @@
                         </div>
                     </div>
                     <div id="fbc">
-                        <ul id="free_board" th:each="boardList, stat : ${viewFree}">
-                            <li class="free_contents" th:text="${boardList.b_Title}"></li>
+                        <ul id="free_board" th:each="freeList, stat : ${viewFree}">
+                            <li class="free_contents">
+                                <a th:href="@{boardDetail(b_Id=${freeList.b_Id})}"><span th:text="${freeList.b_Title}"></span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -58,8 +60,10 @@
                         </div>
                     </div>
                     <div id="gbc">
-                        <ul id="game_board" th:each="boardList, stat : ${viewGame}">
-                            <li class="game_contents" th:text="${boardList.b_Title}"></li>
+                        <ul id="game_board" th:each="gameList, stat : ${viewGame}">
+                            <li class="free_contents">
+                                <a th:href="@{boardDetail(b_Id=${gameList.b_Id})}"><span th:text="${gameList.b_Title}"></span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -74,8 +78,10 @@
                         </div>
                     </div>
                     <div id="wbc">
-                        <ul id="world_board" th:each="boardList, stat : ${viewWorld}">
-                            <li class="world_contents" th:text="${boardList.b_Title}"></li>
+                        <ul id="world_board" th:each="worldList, stat : ${viewWorld}">
+                            <li class="free_contents">
+                                <a th:href="@{boardDetail(b_Id=${worldList.b_Id})}"><span th:text="${worldList.b_Title}"></span></a>
+                            </li>
                         </ul>
                     </div>
 
@@ -88,8 +94,10 @@
                         </div>
                     </div>
                     <div id="pcbc">
-                        <ul id="panCake_board" th:each="boardList, stat : ${viewPcb}">
-                            <li class="panCake_contents" th:text="${boardList.b_Title}"></li>
+                        <ul id="panCake_board" th:each="pcbList, stat : ${viewPcb}">
+                            <li class="free_contents">
+                                <a th:href="@{boardDetail(b_Id=${pcbList.b_Id})}"><span th:text="${pcbList.b_Title}"></span></a>
+                            </li>
                         </ul>
                     </div>
 

@@ -35,15 +35,24 @@
 
   </header>
   <div id="main_container">
+    <div id="contents_wrap">
     <div id="top_col">
       <h2 th:text="${boardDetail.b_Title}"></h2>
     </div>
-    <div>
-      <h3>게시글 내용</h3>
-      <p th:text="${boardDetail.b_Contents}"></p>
-      <h3>게시글 정보</h3>
-      <p>작성자: <span th:text="${boardDetail.b_Users}"></span></p>
-      <p>작성일: <span th:text="${boardDetail.b_Regdate}"></span></p>
+    <div id="main_contents">
+      <div id="contents_top">
+        <p>작성자: <span th:text="${boardDetail.b_Users}"></span></p>
+        <p>작성일: <span th:text="${boardDetail.b_Regdate}"></span></p>
+      </div>
+      <div id="contents_bottom">
+        <p th:text="${boardDetail.b_Contents}"></p>
+      </div>
+      <div id="button_bar">
+        <button type="button" onclick="location.href='update';"><img src="/icons/Button-update.png" alt="글수정버튼"/></button>
+        <button type="button" onclick=""><img src="/icons/Button-delete.png" alt="글삭제버튼"/></button>
+      </div>
+
+    </div>
     </div>
   </div>
 
