@@ -18,9 +18,16 @@ public interface PageMapper {
     List<PageDto> selectPcbAll(BoardDto boardDto);
 
     BoardDto selectDetail(BoardDto boardDto);
+    void insertBoard(BoardDto boardDto);
+
+    void updateBoard(BoardDto boardDto);
+
+    void deleteBoard(BoardDto boardDto);
+
 
     int countBoardFree();
     int countBoardGame();
     int countBoardWorld();
     int countBoardPcb();
+
 }

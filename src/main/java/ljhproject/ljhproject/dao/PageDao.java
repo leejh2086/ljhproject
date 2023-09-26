@@ -43,6 +43,7 @@ public class PageDao {
         return pageMapper.selectDetail(boardDto);
     }
 
+
     public int countBoardFree() {
         return pageMapper.countBoardFree();
     }
@@ -56,6 +57,20 @@ public class PageDao {
         return pageMapper.countBoardPcb();
     }
 
+    public void insertBoard(BoardDto boardDto){
+
+        pageMapper.insertBoard(boardDto);
+    }
+
+    public void updateBoard(BoardDto boardDto){
+
+        pageMapper.updateBoard(boardDto);
+    }
+
+    public void deleteBoard(BoardDto boardDto){
+
+        pageMapper.deleteBoard(boardDto);
+    }
 
 
 

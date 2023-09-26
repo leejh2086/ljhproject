@@ -9,10 +9,6 @@ import java.util.List;
     public interface BoardMapper {
         List<BoardDto> findAllBoard();
 
-        void insertBoard(BoardDto boardDto);
 
-        void updateBoard(BoardDto boardDto);
-
-        void deleteBoard(BoardDto boardDto);
     }
 

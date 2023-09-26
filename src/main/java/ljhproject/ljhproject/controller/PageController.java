@@ -7,10 +7,7 @@ import ljhproject.ljhproject.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PageController {
@@ -110,12 +107,36 @@ public class PageController {
         return "boardDetail"; // 상세 페이지 뷰 이름
     }
 
-    @RequestMapping("boardUpdate")
+    @RequestMapping("update")
     public String updateDetail(@RequestParam("b_Id") int b_Id, Model model) {
         BoardDto boardDto = new BoardDto();
         boardDto.setB_Id(b_Id);
         model.addAttribute("boardUpdate", pageService.selectDetail(boardDto));
         return "update"; // 상세 페이지 뷰 이름
     }
+    @PostMapping("/insert")
+    public String insertDto(BoardDto boardDto) {
+
+        pageService.insertBoard(boardDto);
+        return "/write.html";
+    }
+
+    @PostMapping("/update")
+    public String UpdateDto(BoardDto boardDto){
+
+        pageService.updateBoard(boardDto);
+        return "/write.html";
+    }
+
+    @PostMapping("/delete")
+    public String DeleteBoard(BoardDto boardDto){
+
+        pageService.deleteBoard(boardDto);
+        return "redirect:/write.html";
+    }
+
+
+
+
 
 }

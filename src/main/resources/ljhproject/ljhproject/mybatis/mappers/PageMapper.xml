@@ -67,6 +67,22 @@
         WHERE b_Id = #{b_Id}
     </select>
 
+    <insert id="insertBoard">
+        INSERT INTO ljh_board_tb(b_Title, b_Contents)
+        VALUE(#{b_Title}, #{b_Contents})
+    </insert>
+
+    <update id="updateBoard">
+        UPDATE ljh_board_tb
+        SET b_Title = #{b_Title}, b_Contents = #{b_Contents}
+        WHERE b_Id = #{b_Id}
+    </update>
+
+    <delete id="deleteBoard">
+        DELETE FROM ljh_board_tb
+        WHERE b_Id = #{b_Id}
+    </delete>
+
 
 
 </mapper>

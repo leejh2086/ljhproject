@@ -39,20 +39,21 @@
     <div id="top_col">
       <h2 th:text="${boardDetail.b_Title}"></h2>
     </div>
-    <div id="main_contents">
-      <div id="contents_top">
-        <p>작성자: <span th:text="${boardDetail.b_Users}"></span></p>
-        <p>작성일: <span th:text="${boardDetail.b_Regdate}"></span></p>
-      </div>
-      <div id="contents_bottom">
-        <p th:text="${boardDetail.b_Contents}"></p>
-      </div>
-      <div id="button_bar">
-        <button type="button" onclick="location.href='update';"><img src="/icons/Button-update.png" alt="글수정버튼"/></button>
-        <button type="button" onclick=""><img src="/icons/Button-delete.png" alt="글삭제버튼"/></button>
-      </div>
-
-    </div>
+      <form id="update_form" method="post" onsubmit="set()">
+        <div id="main_contents">
+          <div id="contents_top">
+            <p>작성자: <span th:text="${boardDetail.b_Users}"></span></p>
+            <p>작성일: <span th:text="${boardDetail.b_Regdate}"></span></p>
+        </div>
+        <div id="contents_bottom">
+          <p th:text="${boardDetail.b_Contents}"></p>
+        </div>
+        <div id="button_bar">
+          <a th:href="@{/update(b_Id=${boardDetail.b_Id})}"><img src="/icons/Button-update.png" alt="글수정버튼"/></a>
+          <button type="submit" id="delete"><img src="/icons/Button-delete.png" alt="글삭제버튼"/></button>
+        </div>
+        </div>
+      </form>
     </div>
   </div>
 

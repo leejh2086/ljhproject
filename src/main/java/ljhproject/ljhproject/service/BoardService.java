@@ -21,13 +21,7 @@ public class BoardService {
         return boardDao.findAllBoard();
     }
 
-    public void insertBoard(BoardDto boardDto){
-        boardDao.insertBoard(boardDto);
-    }
 
-    public void updateBoard(BoardDto boardDto) { boardDao.updateBoard(boardDto);}
-
-    public void deleteBoard(BoardDto boardDto) { boardDao.deleteBoard(boardDto); }
 
 
 }

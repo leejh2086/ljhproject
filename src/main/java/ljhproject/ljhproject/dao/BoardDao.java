@@ -22,18 +22,5 @@ public class BoardDao {
         return boardMapper.findAllBoard();
     }
 
-    public void insertBoard(BoardDto boardDto){
 
-        boardMapper.insertBoard(boardDto);
-    }
-
-    public void updateBoard(BoardDto boardDto){
-
-        boardMapper.updateBoard(boardDto);
-    }
-
-    public void deleteBoard(BoardDto boardDto){
-
-        boardMapper.updateBoard(boardDto);
-    }
 }

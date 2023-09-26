@@ -58,6 +58,7 @@ public class PageService {
 
     }
 
+
     public int countBoardFree() {
         return pageDao.countBoardFree();
     }
@@ -71,5 +72,12 @@ public class PageService {
         return pageDao.countBoardFree();
     }
 
+    public void insertBoard(BoardDto boardDto){
+        pageDao.insertBoard(boardDto);
+    }
+
+    public void updateBoard(BoardDto boardDto) { pageDao.updateBoard(boardDto);}
+
+    public void deleteBoard(BoardDto boardDto) { pageDao.deleteBoard(boardDto); }
 
 }
