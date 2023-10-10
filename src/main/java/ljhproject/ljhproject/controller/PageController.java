@@ -1,12 +1,15 @@
 package ljhproject.ljhproject.controller;
 
 import ljhproject.ljhproject.dto.BoardDto;
+import ljhproject.ljhproject.dto.LoginDto;
 import ljhproject.ljhproject.dto.PageDto;
 import ljhproject.ljhproject.service.BoardService;
 import ljhproject.ljhproject.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -133,6 +136,21 @@ public class PageController {
 
         pageService.deleteBoard(boardDto);
         return "redirect:/write.html";
+    }
+    @GetMapping("/login")
+    public String goLogin(@ModelAttribute LoginDto loginDto) {
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(@Validated @ModelAttribute LoginDto loginDto, BindingResult bindingResult, Model model) {
+
+        if(bindingResult.hasErrors()){
+
+            return "login";
+        }
+
+        return "redirect:/";
     }
 
 
