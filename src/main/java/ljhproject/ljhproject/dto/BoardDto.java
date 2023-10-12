@@ -12,6 +12,7 @@ import java.time.LocalDate;
 
 public class BoardDto {
     private int b_Id;
+    private int b_Category;
     private String b_Title;
     private String b_Contents;
     private String b_Users;

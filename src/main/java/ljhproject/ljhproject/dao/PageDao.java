@@ -47,9 +47,7 @@ public class PageDao {
     public int countBoardFree() {
         return pageMapper.countBoardFree();
     }
-    public int countBoardGame() {
-        return pageMapper.countBoardGame();
-    }
+    public int countBoardGame() { return pageMapper.countBoardGame(); }
     public int countBoardWorld() {
         return pageMapper.countBoardWorld();
     }

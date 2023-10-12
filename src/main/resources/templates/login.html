@@ -7,7 +7,31 @@
     <link rel="stylesheet" th:href="@{/css/global.css}" href="/static/css/global.css">
 </head>
 <body>
-<header>
+<header id="header">
+    <div id="header_left">
+        <button id="header_left_button"><img src="/icons/hamburger.svg" alt="메뉴바"/></button>
+        <button id="header_left_logo" onclick="location.href='/';"><img src="icons/LJHProject.png" alt="로고"/></button>
+        <div id="side_menu" style="display:none; z-index:2;">
+            <ul>
+                <li><a>자유게시판</a></li>
+                <li><a>게임 이모저모</a></li>
+                <li><a>세상 이모저모</a></li>
+                <li><a>잡다한 지식</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="header_center">
+        <ul id="header_center_ul">
+            <li><a href="free">자유게시판</a></li>
+            <li><a href="game">게임 이모저모</a></li>
+            <li><a href="world">세상 이모저모</a></li>
+            <li><a href="pancake">잡다한 지식</a></li>
+        </ul>
+    </div>
+    <div id="header_right">
+        <button class="header_right_button" onclick="location.href='jMemberShip';"><img src="icons/Button-membership.png" alt="회원가입버튼"/></button>
+        <button class="header_right_button" onclick="location.href='login';"><img src="icons/Button-login.png" alt="로그인버튼"/></button>
+    </div>
 
 </header>
 <main>
@@ -16,15 +40,12 @@
 
         <form th:action="@{/login}" method="post" th:object="${loginDto}">
             <label>ID</label>
-            <input type="text" placeholder="id" th:field="*{text}">
-
+            <input type="text" placeholder="id" th:field="*{id}">
+            <p th:errors="*{id}"></p>
             <label>PW</label>
             <input type="password" placeholder="password" th:field="*{password}">
             <p th:errors="*{password}"></p>
 
-            <label>Nickname</label>
-            <input placeholder="nickname" th:field="*{nickname}">
-            <p th:errors="*{nickname}"></p>
 
             <div id="button_div">
                 <button>로그인</button>

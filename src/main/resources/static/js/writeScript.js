@@ -4,3 +4,5 @@ function set(){
   let select = document.querySelector("#select");
   bContents.value = editor;
 }
+
+

@@ -22,42 +22,42 @@
     </select>
 
     <select id="selectFree" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '1'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '1' ORDER BY b_Id DESC
         LIMIT 6 OFFSET #{abc};
     </select>
 
     <select id="selectFreeAll" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '1'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '1' ORDER BY b_Id DESC
         LIMIT 10 OFFSET #{abc};
     </select>
 
     <select id="selectGame" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '2'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '2' ORDER BY b_Id DESC
         LIMIT 6 OFFSET #{abc};
     </select>
 
     <select id="selectGameAll" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '2'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '2' ORDER BY b_Id DESC
         LIMIT 10 OFFSET #{abc};
     </select>
 
     <select id="selectWorld" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '3'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '3' ORDER BY b_Id DESC
         LIMIT 6 OFFSET #{abc};
     </select>
 
     <select id="selectWorldAll" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '3'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '3' ORDER BY b_Id DESC
         LIMIT 10 OFFSET #{abc};
     </select>
 
     <select id="selectPcb" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '4'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '4' ORDER BY b_Id DESC
         LIMIT 6 OFFSET #{abc};
     </select>
 
     <select id="selectPcbAll" resultType="ljhproject.ljhproject.dto.BoardDto">
-        SELECT * FROM ljh_board_tb WHERE b_Category = '4'
+        SELECT * FROM ljh_board_tb WHERE b_Category = '4' ORDER BY b_Id DESC
         LIMIT 10 OFFSET #{abc};
     </select>
 
@@ -68,13 +68,13 @@
     </select>
 
     <insert id="insertBoard">
-        INSERT INTO ljh_board_tb(b_Title, b_Contents)
-        VALUE(#{b_Title}, #{b_Contents})
+        INSERT INTO ljh_board_tb(b_Title, b_Contents, b_Category)
+        VALUE(#{b_Title}, #{b_Contents}, #{b_Category})
     </insert>
 
     <update id="updateBoard">
         UPDATE ljh_board_tb
-        SET b_Title = #{b_Title}, b_Contents = #{b_Contents}
+        SET b_Title = #{b_Title}, b_Contents = #{b_Contents}, b_Category = #{b_Category}
         WHERE b_Id = #{b_Id}
     </update>
 

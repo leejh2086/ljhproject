@@ -63,13 +63,13 @@ public class PageService {
         return pageDao.countBoardFree();
     }
     public int countBoardGame() {
-        return pageDao.countBoardFree();
+        return pageDao.countBoardGame();
     }
     public int countBoardWorld() {
-        return pageDao.countBoardFree();
+        return pageDao.countBoardWorld();
     }
     public int countBoardPcb() {
-        return pageDao.countBoardFree();
+        return pageDao.countBoardPcb();
     }
 
     public void insertBoard(BoardDto boardDto){

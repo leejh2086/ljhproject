@@ -90,6 +90,7 @@ color:#d5d5d5;
 #header_right {
 display:flex;
 align-items:center;
+margin-right:16px;
 }
 
 #header_right > button {
@@ -118,6 +119,20 @@ font-size:24px;
 font-weight:bold;
 }
 
+#category_div {
+display:flex;
+margin:16px 0px 16px 8px;
+}
+
+#menu_select {
+display:flex;
+gap:8px;
+}
+
+.menu_li:hover {
+color:#D8D8D8;
+cursor:pointer;
+}
 
 #title {
 margin:0px 8px 0px 8px;

@@ -37,29 +37,13 @@ import java.util.List;
         }
 
 
-     @RequestMapping("/free")
-     public String toFree(Model model){
 
-         return "free.html";
-     }
 
-     @RequestMapping("/game")
-     public String toGame(Model model){
 
-         return "game.html";
-     }
 
-     @RequestMapping("/world")
-     public String toWorld(Model model){
 
-         return "world.html";
-     }
 
-     @RequestMapping("/pancake")
-     public String toPanCake(Model model){
 
-         return "panCake.html";
-     }
 
 
 

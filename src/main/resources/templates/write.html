@@ -30,8 +30,8 @@
             </ul>
         </div>
         <div id="header_right">
-            <button class="header_right_button"><img src="icons/Button-membership.png" alt="회원가입버튼"/></button>
-            <button class="header_right_button"><img src="icons/Button-login.png" alt="로그인버튼"/></button>
+            <button class="header_right_button" onclick="location.href='jMemberShip';"><img src="icons/Button-membership.png" alt="회원가입버튼"/></button>
+            <button class="header_right_button" onclick="location.href='login';"><img src="icons/Button-login.png" alt="로그인버튼"/></button>
         </div>
 
     </header>
@@ -39,6 +39,17 @@
     <form id="write_form" action="/insert" method="post" onsubmit="set()">
         <div id="top_col">
             <h2>글쓰기 페이지</h2>
+        </div>
+
+        <div id="category_div">
+            <nav id="menu_nav">
+                <select id="menu_select" name="b_Category">
+                    <option class="menu_li" value="1">자유게시판</option>
+                    <option class="menu_li" value="2">게임 이모저모</option>
+                    <option class="menu_li" value="3">세상 이모저모</option>
+                    <option class="menu_li" value="4">잡다한 지식</option>
+                </select>
+            </nav>
         </div>
 
         <div id="title">
@@ -85,8 +96,11 @@
                     toolbar: toolbarOptions
                   },
                   theme: 'snow'
-                })
+
+                });
+
     </script>
+
 
 
 <footer>
